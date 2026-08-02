@@ -22,6 +22,12 @@ A personal, reusable collection of **SwiftUI code snippets, patterns, and docume
 | [Alerts & Sheets](./12-AlertsAndSheets) | `alert`, `confirmationDialog`, `sheet`, `fullScreenCover` |
 | [Animations](./13-Animations) | Implicit/explicit animations, transitions, `matchedGeometryEffect` |
 | [Extensions & Modifiers](./14-ExtensionsAndModifiers) | Reusable `ViewModifier`, `View` extensions, `Color` hex init |
+| [SwiftData & Core Data](./15-SwiftData-CoreData) | `@Model`/`@Query` CRUD, Core Data step-by-step guide |
+| [Combine](./16-Combine) | Publishers/operators, debounced search, Combine networking |
+| [Testing](./17-Testing) | Unit-testing the network layer (mock service, `URLProtocol` stub, Swift Testing) |
+| [Charts](./18-Charts) | Swift Charts — bar/line/multi-series, interactive selection |
+| [Accessibility](./19-Accessibility) | VoiceOver labels/traits, Dynamic Type, semantic fonts |
+| [Dark / Light Mode](./20-DarkLightMode) | Semantic colors, asset color sets, persisted theme switcher |
 
 ## 🧭 How to use this repo
 
