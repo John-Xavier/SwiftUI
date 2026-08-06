@@ -28,13 +28,18 @@ A personal, reusable collection of **SwiftUI code snippets, patterns, and docume
 | [Charts](./18-Charts) | Swift Charts — bar/line/multi-series, interactive selection |
 | [Accessibility](./19-Accessibility) | VoiceOver labels/traits, Dynamic Type, semantic fonts |
 | [Dark / Light Mode](./20-DarkLightMode) | Semantic colors, asset color sets, persisted theme switcher |
+| [Image Picking & Display](./21-ImagePicker) | `PhotosPicker` (single/multi), camera via `UIImagePickerController` |
+| [SSL / Certificate Pinning](./22-SSLPinning) | Certificate pinning & public-key pinning via `URLSessionDelegate` |
+
+> 🔐 **Secrets** (auth tokens, passwords) go in the [Keychain](./10-Persistence/Keychain.swift), not UserDefaults.
 
 ## 🧭 How to use this repo
 
 1. Browse the folder for the feature you need.
 2. Each folder has a `README.md` explaining the concept and when to use it.
-3. Copy the `.swift` file (or the relevant snippet) into your project.
-4. Comments explain **why**, not just **what** — read them before adapting.
+3. **Read files in order — simplest first.** Where a topic has both, files are ordered `*-Simple` → `*-FullCRUD`/`*-Advanced`, and each README has a simple→advanced table. Start at the top; only go deeper if you need to.
+4. Copy the `.swift` file (or the relevant snippet) into your project.
+5. Comments explain **why**, not just **what** — read them before adapting.
 
 ## 🗂 Folder convention
 
