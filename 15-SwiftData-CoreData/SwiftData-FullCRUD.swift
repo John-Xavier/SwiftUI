@@ -1,6 +1,6 @@
 //
-//  SwiftDataExample.swift
-//  A full SwiftData CRUD list (iOS 17+).
+//  SwiftData-FullCRUD.swift
+//  A fuller SwiftData CRUD list (iOS 17+). Read SwiftData-Simple.swift first.
 //
 //  Requires `import SwiftData` and a deployment target of iOS 17.
 //

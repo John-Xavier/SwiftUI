@@ -3,12 +3,16 @@
 Local databases for when `UserDefaults`/JSON files aren't enough (querying, relationships, large datasets).
 
 - **SwiftData** (iOS 17+) — modern, Swift-native, minimal boilerplate. **Prefer this for new apps on iOS 17+.**
-- **Core Data** — mature, powerful, supports iOS 13+. Reach for it when you need to support older OSes or use advanced features SwiftData doesn't expose yet.
+- **Core Data** — mature, supports iOS 13+. Use it when you must support older OSes.
 
-## Files
+## Files (simple → advanced)
 
-- [`SwiftDataExample.swift`](./SwiftDataExample.swift) — `@Model`, `@Query`, `modelContext` insert/delete — a full CRUD list.
-- [`CoreData-StepByStep.md`](./CoreData-StepByStep.md) — step-by-step guide to wiring up Core Data (no full code dump; the boilerplate is Xcode-generated).
+| Order | File | Level | What it does |
+|-------|------|-------|--------------|
+| 1 | [`SwiftData-Simple.swift`](./SwiftData-Simple.swift) | 🟢 Simple | Smallest possible SwiftData app — **start here** |
+| 2 | [`SwiftData-FullCRUD.swift`](./SwiftData-FullCRUD.swift) | 🟡 Medium | Full create/read/update/delete list with sorting & toggles |
+| 3 | [`CoreData-Simple.swift`](./CoreData-Simple.swift) | 🟡 Medium | The smallest working Core Data setup, in plain code |
+| 4 | [`CoreData-StepByStep.md`](./CoreData-StepByStep.md) | 🔴 Reference | Full walkthrough incl. the Xcode model-file step & gotchas |
 
 ## Which should I use?
 
@@ -16,32 +20,32 @@ Local databases for when `UserDefaults`/JSON files aren't enough (querying, rela
 |-----------|-----|
 | New app, iOS 17+ | **SwiftData** |
 | Must support iOS 13–16 | **Core Data** |
-| Need CloudKit sync | Either (both support it; Core Data is more battle-tested) |
 | Simple settings/flags | Neither — use [`@AppStorage`](../10-Persistence) |
+| Secrets (tokens) | Neither — use [Keychain](../10-Persistence/Keychain.swift) |
 
-## SwiftData in 30 seconds
+## SwiftData in 3 steps
 
 ```swift
-@Model final class Task { var title: String; init(title: String) { self.title = title } }
+// 1. Mark the class:
+@Model final class Note { var text: String; init(text: String) { self.text = text } }
 
-// App entry:
-.modelContainer(for: Task.self)
+// 2. Turn on the database once, at the app root:
+.modelContainer(for: Note.self)
 
-// In a view:
+// 3. Read + write in a view:
 @Environment(\.modelContext) private var context
-@Query private var tasks: [Task]
+@Query private var notes: [Note]
 
-context.insert(Task(title: "Buy milk"))   // create
-context.delete(task)                       // delete
-// updates: just mutate a @Model property — saved automatically
+context.insert(Note(text: "Hi"))   // create (saved automatically)
+context.delete(note)                // delete
+note.text = "Edited"               // update — just mutate, it saves
 ```
 
 ## Mental model (both frameworks)
 
 ```
-Model (schema)  →  Container (the store/DB file)  →  Context (a scratchpad you read/write)  →  View
+Model (your class/entity)  →  Container (the database file)  →  Context (add/edit/delete here)  →  save
 ```
 
-- **Container** = the on-disk database.
-- **Context** = the in-memory workspace; changes are saved back to the container.
-- **`@Query`** (SwiftData) / `@FetchRequest` (Core Data) = a live query that auto-updates the UI when data changes.
+- **SwiftData** saves automatically. **Core Data** needs an explicit `context.save()`.
+- **`@Query`** (SwiftData) / **`@FetchRequest`** (Core Data) = a live query that auto-updates the UI.
