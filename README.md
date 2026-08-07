@@ -30,6 +30,7 @@ A personal, reusable collection of **SwiftUI code snippets, patterns, and docume
 | [Dark / Light Mode](./20-DarkLightMode) | Semantic colors, asset color sets, persisted theme switcher |
 | [Image Picking & Display](./21-ImagePicker) | `PhotosPicker` (single/multi), camera via `UIImagePickerController` |
 | [SSL / Certificate Pinning](./22-SSLPinning) | Certificate pinning & public-key pinning via `URLSessionDelegate` |
+| [UI Components](./23-UIComponents) | Buttons, pills, tags, badges, cards, avatars, chips, toasts |
 
 > 🔐 **Secrets** (auth tokens, passwords) go in the [Keychain](./10-Persistence/Keychain.swift), not UserDefaults.
 
