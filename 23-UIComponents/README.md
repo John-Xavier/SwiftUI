@@ -11,7 +11,14 @@ The most-used, reusable design elements — buttons, pills, tags, badges, cards,
 | [`Cards.swift`](./Cards.swift) | Basic card, image card, info/list card |
 | [`Avatars.swift`](./Avatars.swift) | Circle avatar, **initials** avatar, avatar with status dot, overlapping avatar stack |
 | [`Chips.swift`](./Chips.swift) | Selectable filter chips (single & multi-select), wrapping chip layout |
-| [`Toast.swift`](./Toast.swift) | Toast / snackbar overlay with auto-dismiss (advanced) |
+| [`Toast.swift`](./Toast.swift) | Toast / snackbar overlay with auto-dismiss |
+| [`SegmentedControls.swift`](./SegmentedControls.swift) | Native segmented `Picker` + a custom animated segmented control |
+| [`TogglesAndSwitches.swift`](./TogglesAndSwitches.swift) | Native switch, tinted, **checkbox** `ToggleStyle`, fully custom switch |
+| [`SearchBar.swift`](./SearchBar.swift) | Custom search bar (clear + cancel) — for where `.searchable` can't go |
+| [`RatingStars.swift`](./RatingStars.swift) | Read-only star rating (halves) + interactive tap-to-rate |
+| [`SkeletonLoaders.swift`](./SkeletonLoaders.swift) | Shimmering skeleton placeholders while data loads |
+| [`BottomSheet.swift`](./BottomSheet.swift) | Simple `.presentationDetents` sheet + a custom draggable overlay |
+| [`SampleScreen.swift`](./SampleScreen.swift) | **A full profile screen assembling all of the above into one UI** |
 
 ## Design tokens first (do this once)
 
